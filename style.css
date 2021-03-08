@@ -147,3 +147,17 @@ p {
   border-radius: 4px;
   color: var(--color-white);
 }
+
+/* Section commmon */
+.section {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+}
