@@ -160,6 +160,10 @@ p {
   color: var(--color-white);
 }
 
+.home__contact:hover {
+  background-color: var(--color-dark-white);
+}
+
 /* Section commmon */
 .section {
   padding: 50px;
