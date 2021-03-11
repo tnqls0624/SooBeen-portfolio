@@ -19,11 +19,18 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoViews(link);
 });
 const homeContactMe = document.querySelector(".home__contact");
 homeContactMe.addEventListener("click", () => {
   scrollIntoViews("#contact");
+});
+
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Make home slowly fade to transparent as the window scroll down
@@ -56,6 +63,11 @@ workBtnContainer.addEventListener("click", (e) => {
     return;
   }
   projectContainer.classList.add("animation-out");
+  const active = document.querySelector(".category__btn.selected");
+  active.classList.remove("selected");
+  const target =
+    e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+  e.target.classList.add("selected");
   setTimeout(() => {
     projectContainer.classList.remove("animation-out");
     projects.forEach((project) => {
@@ -71,6 +83,8 @@ workBtnContainer.addEventListener("click", (e) => {
 arrowUp.addEventListener("click", () => {
   scrollIntoViews("#home");
 });
+
+// Remove selection from the previous item and select the new one
 
 function scrollIntoViews(selector) {
   const scrollTo = document.querySelector(selector);
