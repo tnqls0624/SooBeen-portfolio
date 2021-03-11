@@ -102,7 +102,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: #1f8cadb4;
-  padding: 8px;
+  padding: 16px;
 }
 
 .navbar__menu {
@@ -326,6 +326,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+.work__projects.animation-out {
+  transform: scale(0.96) translateZ(40px);
+  opacity: 0;
 }
 
 .project {
@@ -337,6 +343,10 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.project.invisible {
+  display: none;
 }
 .project__img {
   max-width: 100%;
@@ -380,13 +390,13 @@ p {
 }
 
 #contact {
-  background-color: #1f8cadb4;
+  background-color: var(--color-yellow);
 }
 
 .contact__email,
 .contact__title,
 .contact__rights {
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 .contact__title {
@@ -397,7 +407,9 @@ p {
   font-size: var(--font-large);
   margin: 24px 0;
 }
-
+.contact__links i {
+  color: var(--color-dark-white);
+}
 .contact__links i:hover {
   transition: all var(--animation-duration) ease;
   transform: scale(1.1);
@@ -411,6 +423,20 @@ p {
   font-size: 24px;
   color: var(--color-white);
   display: none;
+}
+
+/* Arrow Up */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 50px;
+  background-color: var(--color-white);
+  color: #1f8cadb4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease;
+  pointer-events: none;
 }
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
@@ -439,4 +465,10 @@ p {
   .project {
     flex-grow: 1;
   }
+}
+
+/* ArrowUp */
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
