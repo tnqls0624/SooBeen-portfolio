@@ -78,7 +78,7 @@ workBtnContainer.addEventListener("click", (e) => {
         project.classList.add("invisible");
       }
     });
-  }, 300);
+  }, 200);
 });
 arrowUp.addEventListener("click", () => {
   scrollIntoViews("#home");
